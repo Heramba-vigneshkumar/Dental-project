@@ -31,6 +31,7 @@ body::-webkit-scrollbar{
     width: max-content;
     background: var(--primeColor);
     color: #444;
+    transition: all .3s;
 }
 
 .subTitle{
@@ -138,6 +139,7 @@ body::-webkit-scrollbar{
     top: 0;
     z-index: 10;
     box-shadow: 0 0 10px #5e5e5e;
+    font-size: .9em;
 }
 
 .navTitle{
@@ -186,7 +188,7 @@ body::-webkit-scrollbar{
     position: absolute;
     bottom: -5px;
     left: 50%;
-    transform: translateX(-50%) scaleY(.06);
+    transform: translateX(-50%) scaleY(.07);
     opacity: 0;
     width: 1%;
     height: 40px;
@@ -228,7 +230,7 @@ body::-webkit-scrollbar{
 
 #home{
     background: url(https://www.localsearch.ie/wp-content/uploads/bannerpic1.jpg) no-repeat;
-    background-size: 100vw 100vh;
+    background-size: cover;
     height: calc(100vh - 86px);
     display: flex;
     flex-direction: column;
@@ -237,7 +239,7 @@ body::-webkit-scrollbar{
 
 #home h2{
     font-size: 3.5em;
-    padding: 1em 1em .5em;
+    padding: 1em 4vw .5em;
     color: #002011;
     text-shadow: 3px 3px 2px var(--primeColor),
     3px 3px 2px var(--primeColor),
@@ -250,11 +252,11 @@ body::-webkit-scrollbar{
 
 #home p{
     text-indent: 3em;
-    font-size: .9em;
+    font-size: 1em;
     color: #fff;
     filter: drop-shadow(2px 2px 2px #050505);
-    width: 70vw;
-    padding: 0 4.5em 1em;
+    width: 36em;
+    padding: 0 4vw 1em;
 }
 
 #home aside{
@@ -266,10 +268,10 @@ body::-webkit-scrollbar{
 }
 
 button:hover{
-    transition: all .3s ease;
-    transform: scale(1.05);
+    transform: scaleX(1.05);
     box-shadow: 0 0 20px var(--primeColor);
     cursor: pointer;
+    transition: all .3s;
 }
 
 /* services */
@@ -423,7 +425,6 @@ button:hover{
     margin: 1%;
     height: 243px;
     width: 360px;
-    border-radius: 5px;
     position: relative;
 }
 
@@ -449,7 +450,6 @@ button:hover{
     padding: 8px 12px;
     height: 23px;
     overflow: hidden;
-    border-radius: 0 0 5px 5px;
     background: var(--primeColor) !important;
 }
 
@@ -537,6 +537,7 @@ button:hover{
     flex-wrap: wrap;
     align-items: center;
     background: var(--ultraPrimeColor);
+    position: relative;
 }
 
 #review figure{
@@ -558,6 +559,12 @@ button:hover{
 #review span{
     color: var(--primeColor);
     font-size: 18px;
+}
+
+#review .fa-xmark{
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 #review article{
@@ -737,8 +744,44 @@ footer i:hover{
 /* media query */
 
 @media(min-width:1200px){
-    .navList a{
-        font-size: 18px;
+    .navbar{
+        font-size: 1.3vw;
+    }
+
+    .navbar img{
+        width: 5vw;
+    }
+
+    #home{
+        height: calc(100vh - 6vw);
+    }
+
+    #home h2{
+        font-size: 5vw;
+    }
+
+    #home p, #home button{
+        font-size: 1.4vw;
+    }
+
+    #services{
+        font-size: 1.4vw;
+    }
+
+    #services div{
+        width: 30vw;
+        height: 15vw;
+    }
+
+    #services img{
+        height: 5vw;
+        width: 5vw;
+    }
+    
+    #review
+
+    footer {
+        font-size: 1.2em;
     }
 }
 
@@ -820,7 +863,7 @@ footer i:hover{
         text-align: center;
         border-bottom: 1px solid #757575ce;
         background: #3d3d3d9f;
-        backdrop-filter: blur(3px);
+        backdrop-filter: blur(5px);
     }
     
     .navList li:hover{
@@ -835,9 +878,9 @@ footer i:hover{
 
 @media (max-width:768px){
 
-    /* #home button{
-        font-size: 1em;
-    } */
+    #home p{
+        font-size: .9em;
+    }
 
     #review textarea{
         width: 23.5em;
@@ -872,6 +915,21 @@ footer i:hover{
     }
 }
 
+@media (max-width:605px){
+    #viewStatus h2 span{
+        right: 45%;
+        top: 2.5em;
+    }
+
+    .appointmentStatus figcaption{
+        font-size: 12.5px;
+    }
+
+    .appointmentStatus .cancel{
+        font-size: 12.5px;
+    }
+}
+
 @media (max-width:576px){
     .navTitle img{
         width: 55px;
@@ -885,9 +943,16 @@ footer i:hover{
         top: 55px;
     }
 
+    .showList .fa-solid{
+        font-size: 1.6em; 
+        padding: .3em;
+    }
+    
+    .navbar .status{
+        font-size: 1.2em;
+    }
+
     #home{
-        /* display: grid;
-        place-items: center; */
         align-items: center;
         height: calc(100vh - 55px);
     }
@@ -901,6 +966,14 @@ footer i:hover{
         padding-right: 5%;
     }
 
+    #home p{
+        width: 33em;
+    }
+
+    #home button{
+        font-size: 1em;
+    }
+
     #review{
         padding-left: 2%;
         padding-right: 2%;
@@ -911,21 +984,6 @@ footer i:hover{
         gap: 1.5em;
         padding-left: 1em;
         padding-right: 1em;
-    }
-}
-
-@media (max-width:605px){
-    #viewStatus h2 span{
-        right: 45%;
-        top: 2.5em;
-    }
-
-    .appointmentStatus figcaption{
-        font-size: 12.5px;
-    }
-
-    .appointmentStatus .cancel{
-        font-size: 12.5px;
     }
 }
 

@@ -81,5 +81,42 @@ function addAppt() {
     
 function cancelAppt (event) {
     event.target.parentElement.remove()
-    // console.log(event.target.parentElement.remove())
+}
+
+let review = document.getElementById('review')
+let userText = document.getElementById('userText')
+
+function postComment() {
+    div.setAttribute('id','reviewPanel')
+    div.innerHTML = `<figure>
+                    <img class="userProfile" src="https://images.pexels.com/photos/14950779/pexels-photo-14950779.jpeg?auto=compress&cs=tinysrgb&w=100" alt="">
+                </figure>
+
+                <aside>
+                    <h3>
+                        ${userName.value}
+                    </h3>
+                    <span>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                </aside>
+                
+                <i class="fa-solid fa-xmark" onclick="delCom(event)"></i>
+
+                <article> 
+                    <p>
+                        ${userText.value}
+                    </p>
+                </article>`
+
+    review.appendChild('div')
+}
+console.log(document.getElementsByClassName('userProfile').getAttribute('src'))
+
+function delCom (event) {
+    event.target.parentElement.remove()
 }

@@ -14,12 +14,12 @@
     <nav class="navbar">
 
         <div class="navTitle">
-            <img src="images/logo.png" alt="Logo" width="70px"/>
+            <img src="images/logo.png" alt="Logo" width="60px"/>
 
             <h1>
                 <span id="firstTitle">Vk</span>
 
-                <span style="font-size: 70%;color: var(--primeColor);text-shadow: 0 0 .5px #000;">
+                <span style="font-size: 70%;color: var(--primeColor);">
                     Dental
                 </span>
             </h1>
@@ -44,7 +44,7 @@
         </ul>   
 
         <span>
-            <a class="fa-solid fa-calendar-days status"></a>
+            <a class="fa-solid fa-user-clock status"></a>
         </span>
 
         <span class="showList">
@@ -239,13 +239,13 @@
 
             <aside class="reviewInput">
                 <span>Add comments</span> <br/>
-                <textarea placeholder="Type something..."></textarea>
-                <i class="fa-solid fa-location-arrow"></i>
+                <textarea id="userText" placeholder="Type something..."></textarea>
+                <i class="fa-solid fa-location-arrow" onclick="postComment()"></i>
             </aside>
 
-            <div>
+            <div id="reviewPanel">
                 <figure>
-                    <img src="https://images.pexels.com/photos/14950779/pexels-photo-14950779.jpeg?auto=compress&cs=tinysrgb&w=100" alt="">
+                    <img class="userProfile" src="https://images.pexels.com/photos/14950779/pexels-photo-14950779.jpeg?auto=compress&cs=tinysrgb&w=100" alt="">
                 </figure>
 
                 <aside>
@@ -260,6 +260,8 @@
                         <i class="fa-solid fa-star"></i>
                     </span>
                 </aside>
+
+                <i class="fa-solid fa-xmark" onclick="delCom(event)"></i>
 
                 <article>
                     <p>
@@ -286,6 +288,8 @@
                     </span>
                 </aside>
 
+                <i class="fa-solid fa-xmark" onclick="delCom(event)"></i>
+
                 <article>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit earum totam autem nam consequuntur voluptatem asperiores. Assumenda, expedita! Recusandae a officiis minus iusto magnam? Quia, obcaecati voluptatibus. Aliquid, voluptatibus?
@@ -309,6 +313,8 @@
                         <i class="fa-solid fa-star-half-alt"></i>
                     </span>
                 </aside>
+
+                <i class="fa-solid fa-xmark" onclick="delCom(event)"></i>
 
                 <article>
                     <p>
@@ -498,6 +504,5 @@
 
     </footer>
 </body>
-<script src="script.js"></script>    
-
+<script src="script.js"></script>
 </html>
