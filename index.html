@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Care</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png">
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <div class="navTitle">
+            <img src="images/logo.png" alt="Logo" width="70px"/>
+
+            <h1>
+                <span id="firstTitle">Vk</span>
+
+                <span style="font-size: 70%;color: var(--primeColor);text-shadow: 0 0 .5px #000;">
+                    Dental
+                </span>
+            </h1>
+        </div>
+
+        <ul class="navList">
+            <li>
+                <a onclick="selectOpp()" href="#home">Home</a>
+            </li>
+            
+            <li>
+                <a onclick="selectOpp()" href="#services">Services</a>
+            </li>
+
+            <li>
+                <a onclick="selectOpp()" href="#about">About</a>
+            </li>
+
+            <li>        
+                <a onclick="selectOpp()" href="#contact">Contact</a>
+            </li>
+        </ul>   
+
+        <span>
+            <a class="fa-solid fa-calendar-days status"></a>
+        </span>
+
+        <span class="showList">
+            <i class="fa-solid fa-bars"></i>      
+        </span>
+
+    </nav>
+
+    <main>
+        <!-- home -->
+        <section id="home">
+            
+            <h2>
+                LET US BRIGHTEN<br/>
+                YOUR SMILE
+            </h2>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia porro cum nostrum cumque unde quas est architecto illo. Ratione vitae fugit commodi ipsa distinctio id necessitatibus, iste possimus architecto veritatis!
+            </p>
+            
+            <aside>
+                <button class="btn">
+
+                    <a href="#appointment">
+                        Book Appointment
+                    </a>
+
+                </button>
+            </aside>
+            
+        </section>
+        <!-- services -->
+        <section id="services">
+            <h2 class="subTitle">
+                SERVICES
+            </h2>
+
+            <div>
+                <img src="images/dental-crown.png" alt="dental crown">
+                <h4>Dental Crown</h4>
+                <p>Lorem ipsum, dolor consectetur adipisicing elit. Ipsam molestias veritatis temporibus accusantium.</p>
+            </div>
+            
+            <div>
+                <img src="images/braces.png" alt="invisalign">
+                <h4>Invisalign</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quia placeat, asperiores vitae totam sunt.</p>
+            </div>
+            
+            <div>
+                <img src="images/dental-filling.png" alt="cosmetic filling">
+                <h4>Cosmetic Filling</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing. Repudiandae nesciunt labore sunt.</p>
+            </div>
+    
+            <div>
+                <img src="images/tooth-drill.png" alt="teeth cleaning">
+                <h4>Teeth Cleaning</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptates modi corporis magni nihil hic quo nemo.</p>
+            </div>
+            
+            <div>
+                <img src="images/dental-implant.png" alt="dentures">
+                <h4>Dental Implant</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rem error perferendis, minima exercitationem.</p>
+            </div>
+
+            <div>
+                <img src="images/root-canal.png" alt="root canal theraphy">
+                <h4>Root Canal Theraphy</h4>
+                <p>Lorem ipsum dolor sit consectetur adipisicing elit. Repudiandae nesciunt labore sed sunt.</p>
+            </div>
+            
+        </section>
+        <!-- about -->
+        <section id="about">
+            <h2 class="subTitle">
+                ABOUT US
+            </h2>
+
+            <aside>
+                <figure>
+                    <img src="./images/doctor-6.png" alt="">
+                </figure>
+                <dl>
+                    <dt>Dr. S. LAURA</dt>
+                    <dd>
+                        <p>Expert in Root Canal Therophy</p>
+                        <p><b>Experience : </b>5 years</p>
+                    </dd>
+                    <dd class="socialMedia">
+                        <a href="" class="fa-brands fa-facebook"></a>
+                        <a href="" class="fa-brands fa-twitter"></a>
+                        <a href="" class="fa-brands fa-instagram"></a>
+                    </dd>
+                </dl>
+            </aside>
+            <aside class="even">
+                <figure>
+                    <img src="./images/doctor-2.png" alt="">
+                </figure>
+                <dl>
+                    <dt>Dr. P. RAM KUMAR</dt>
+                    <dd>
+                        <p>Expert in Invisalign & Cosmetic Filling</p>
+                        <p><b>Experience : </b>4 years</p>
+                    </dd>
+                    <dd class="socialMedia">
+                        <a href="" class="fa-brands fa-facebook"></a>
+                        <a href="" class="fa-brands fa-twitter"></a>
+                        <a href="" class="fa-brands fa-instagram"></a>
+                    </dd>
+                </dl>
+            </aside>
+            <aside>
+                <figure>
+                    <img src="./images/doctor-3.png" alt="">
+                </figure>
+                <dl>
+                    <dt>Dr. A. SATHYA</dt>
+                    <dd>
+                        <p>Expert in Dental Implant</p>
+                        <p><b>Experience : </b>3.7 years</p>
+                    </dd>
+                    <dd class="socialMedia">
+                        <a href="" class="fa-brands fa-facebook"></a>
+                        <a href="" class="fa-brands fa-twitter"></a>
+                        <a href="" class="fa-brands fa-instagram"></a>
+                    </dd>
+                </dl>
+            </aside>
+            <aside class="even">
+                <figure>
+                    <img src="./images/doctor-1.png" alt="">
+                </figure>
+                <dl>
+                    <dt>Dr. S. VIGNESH</dt>
+                    <dd>
+                        <p>Expert in Tental Crown</p>
+                        <p><b>Experience : </b>2.1 years</p>
+                    </dd>
+                    <dd class="socialMedia">
+                        <a href="" class="fa-brands fa-facebook"></a>
+                        <a href="" class="fa-brands fa-twitter"></a>
+                        <a href="" class="fa-brands fa-instagram"></a>
+                    </dd>
+                </dl>
+            </aside>
+        </section>
+        <!-- process -->
+        <section id="process">
+
+            <h2 class="subTitle">
+                PROCESS
+            </h2>
+
+            <div>
+                <figure></figure>
+                <img src="https://images.pexels.com/photos/4270094/pexels-photo-4270094.jpeg?auto=compress&cs=tinysrgb&w=365" alt="X-Rays">
+                 <dl>
+                    <dt>X-Rays</dt>
+                    <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit.</dd>
+                 </dl>
+            </div>
+
+            <div>
+                <figure></figure>
+                <img src="https://images.pexels.com/photos/3845981/pexels-photo-3845981.jpeg?auto=compress&cs=tinysrgb&w=365" alt="Treatment">
+                <dl>
+                    <dt>Professional Cleaning</dt>
+                    <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic!</dd>
+                 </dl>
+            </div>
+
+            <div>
+                <figure></figure>
+                <img src="https://images.pexels.com/photos/3845842/pexels-photo-3845842.jpeg?auto=compress&cs=tinysrgb&w=365" alt="Professional Cleaning">
+                <dl>
+                    <dt>Treatment</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, eum eveniet</dd>
+                 </dl>
+            </div>
+
+        </section>
+        <!-- review -->
+        <section id="review">
+
+            <h2 class="subTitle">
+                REVIEW
+            </h2>
+
+            <aside class="reviewInput">
+                <span>Add comments</span> <br/>
+                <textarea placeholder="Type something..."></textarea>
+                <i class="fa-solid fa-location-arrow"></i>
+            </aside>
+
+            <div>
+                <figure>
+                    <img src="https://images.pexels.com/photos/14950779/pexels-photo-14950779.jpeg?auto=compress&cs=tinysrgb&w=100" alt="">
+                </figure>
+
+                <aside>
+                    <h3>
+                        Jhony
+                    </h3>
+                    <span>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                </aside>
+
+                <article>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit earum totam autem nam consequuntur voluptatem asperiores. Assumenda, expedita! Recusandae a officiis minus iusto magnam? Quia, obcaecati voluptatibus. Aliquid, voluptatibus?
+                    </p>
+                </article>
+
+            </div>
+            <div>
+                <figure>
+                    <img src="https://images.pexels.com/photos/5649997/pexels-photo-5649997.jpeg?auto=compress&cs=tinysrgb&w=100" alt="">
+                </figure>
+
+                <aside>
+                    <h3>
+                        Clara Mark
+                    </h3>
+                    <span>
+                        <i class="fa-solid fa-star" style="background-color: transparent;"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                </aside>
+
+                <article>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit earum totam autem nam consequuntur voluptatem asperiores. Assumenda, expedita! Recusandae a officiis minus iusto magnam? Quia, obcaecati voluptatibus. Aliquid, voluptatibus?
+                    </p>
+                </article>
+            </div>
+            <div>
+                <figure>
+                    <img src="https://images.pexels.com/photos/6102841/pexels-photo-6102841.jpeg?auto=compress&cs=tinysrgb&w=100" alt="">
+                </figure>
+
+                <aside>
+                    <h3>
+                        Jimme Levis
+                    </h3>
+                    <span>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-alt"></i>
+                    </span>
+                </aside>
+
+                <article>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit earum totam autem nam consequuntur voluptatem asperiores. Assumenda, expedita! Recusandae a officiis minus iusto magnam? Quia, obcaecati voluptatibus. Aliquid, voluptatibus?
+                    </p>
+                </article>
+            </div>
+
+        </section>
+        <!-- appointment -->
+        <section id="appointment">
+
+            <h2 class="subTitle">
+                APPOINTMENT
+            </h2>
+
+            <form>
+                <input id="userName" type="text" placeholder="Your name" required>
+                <input id="userEmail" type="email" placeholder="Your email" required>
+                <input id="userNumber" type="number" placeholder="Mobile" required>
+                <input id="apptDate" type="date" required>
+                <input id="apptTime" type="time" required>
+
+                <aside>
+                    <button class="btn" type="submit" onclick="addAppt()">
+                        Book Appointment
+                    </button>
+                </aside>
+            </form>
+            
+        </section>
+        
+        <section id='viewStatus'>
+            <h2 class="subTitle">
+                Appointment status
+                <span>
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </span>
+            </h2>
+
+            <div class="appointmentStatus">
+                <img src="./images/doctor-1.png" alt="">
+
+                <figcaption>
+                    <h4>Akash</h4>
+                    <p>
+                        <span>
+                            <i class="fa-brands fa-mailchimp"></i>
+                            akash007@gmail.com
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-square-phone"></i>
+                            9768854401
+                        </span>
+                    </p>
+                    <p>
+                        <span>
+                            <i class="fa-regular fa-calendar-days"></i>
+                            28 jan 2025
+                        </span>
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            09:00 am
+                        </span>
+                    </p>
+                </figcaption>
+
+                <span class="cancel" onclick="cancelAppt(event)">
+                    Cancel
+                </span>
+            </div> 
+        </section>
+        <!-- contact -->
+        <section id="contact">
+            
+            <h2 class="subTitle">CONTACT US</h2>
+
+            <div>
+                <aside>
+                    <figure>
+                        <i class="fa-solid fa-phone"></i>
+                    </figure>
+
+                    <dl>
+                        <dt>
+                            contact
+                        </dt>
+                        <dd>
+                            +91-9876543210 <br>
+                            +91-9765483201
+                        </dd>
+                    </dl>
+                </aside>
+
+                <aside>
+                    <figure>
+                        <i class="fa-solid fa-envelope"></i>
+                    </figure>
+
+                    <dl>
+                        <dt>
+                            Email
+                        </dt>
+                        <dd>
+                            vkdental@gmail.com
+                        </dd>
+                    </dl>
+                </aside>
+
+                <aside>
+                    <figure>
+                        <span>
+                            <i class="fa-solid fa-address-card"></i>
+                        </span>
+                    </figure>
+
+                    <dl>
+                        <dt>
+                            Address
+                        </dt>
+                        <dd>
+                            3/12 &nbsp;
+                            1st cross st<br>
+                            Ayyappa temple near<br>
+                            Bangalore<br>
+                            654 210
+                        </dd>
+                    </dl>
+                </aside>
+
+                <aside>
+                    <figure>
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                    </figure>
+
+                    <dl>
+                        <dt>
+                            location
+                        </dt>
+                        <dd>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.59456935012!2d77.61622297418221!3d12.9337592873781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1547b758c3b1%3A0x9cb942f7566198ef!2zVHJlZXNldOKEog!5e0!3m2!1sen!2sin!4v1736308843818!5m2!1sen!2sin" width="100%" height="105vh" style="border:0;border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </dd>
+                        </dd>
+                    </dl>
+                </aside>
+
+                <aside>
+                    <figure>
+                        <i class="fa-solid fa-clock"></i>
+                    </figure>
+
+                    <dl>
+                        <dt>
+                            Opening hours
+                        </dt>
+                        <dd>
+                            Monday - Friday <br>10:00 am - 8:00 pm <br>
+                            Saturday - Sunday <br>10:00 am - 4:00 pm
+                        </dd>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+        <p>
+            <span>&copy;</span> 
+            Copy rights reserved by <span>Vk dental</span>
+        </p>
+
+        <div>
+
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+
+    </footer>
+</body>
+<script src="script.js"></script>    
+
+</html>
