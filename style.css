@@ -43,12 +43,11 @@ body::-webkit-scrollbar{
 
 #viewStatus{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
     overflow-y: scroll;
     background: #1d1d1db4;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
     position: fixed;
     top: 0;
     left: 0;
@@ -59,6 +58,10 @@ body::-webkit-scrollbar{
     transition: all .5s ease;
 }
 
+#viewStatus::-webkit-scrollbar{
+    display: none;
+}
+
 .viewStatusActive{
     transform: translateX(0) !important;
     transition: all .5s ease !important;
@@ -66,17 +69,20 @@ body::-webkit-scrollbar{
 
 #viewStatus h2{
     color: #fff;
-    height: max-content;
+    width: 100%;
+    text-align: center;
+    padding: 1em 0;
     position: relative;
 }
 
 #viewStatus h2 span{
     position: absolute;
-    right: 1.2em;
+    right: 1.5em;
 }
 
 #viewStatus h2 span:hover{
     color: #f82945;
+    cursor: pointer;
 }
 
 #viewStatus .appointmentStatus{
@@ -125,6 +131,7 @@ body::-webkit-scrollbar{
 
 #viewStatus .cancel:hover{
     background: #f82945;
+    cursor: pointer;
 }
  
 /* navbar */
@@ -229,7 +236,8 @@ body::-webkit-scrollbar{
 /* home */
 
 #home{
-    background: url(https://www.localsearch.ie/wp-content/uploads/bannerpic1.jpg) no-repeat;
+    /* background: url(https://www.localsearch.ie/wp-content/uploads/bannerpic1.jpg) no-repeat; */
+    background: url(https://medfordelitedental.com/wp-content/uploads/2023/09/happy-young-person-lying-with-opened-mouth-male-dentist-gloves-using-restoration-instruments.jpg) no-repeat;
     background-size: cover;
     height: calc(100vh - 86px);
     display: flex;
@@ -240,14 +248,17 @@ body::-webkit-scrollbar{
 #home h2{
     font-size: 3.5em;
     padding: 1em 4vw .5em;
-    color: #002011;
-    text-shadow: 3px 3px 2px var(--primeColor),
-    3px 3px 2px var(--primeColor),
-    3px 3px 2px var(--primeColor),
-    3px 3px 2px var(--primeColor),
-    3px 3px 2px var(--primeColor),
-    3px 3px 2px var(--primeColor),
-    3px 3px 2px var(--primeColor);
+    text-shadow: 1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px 1px 2px #000;
+    color: var(--primeColor); 
 }
 
 #home p{
@@ -339,24 +350,20 @@ button:hover{
     margin: 1em 3vw;
     width: 100vw;
     height: 40vw;
-    background: linear-gradient(to top left, var(--ultraPrimeColor), var(--primeColor));
+    background: linear-gradient(to top left, #d961fd, var(--primeColor));
     border-radius: 5px;
     font-size: 1.5vw;
     transition: all .3s;
 }
 
 #about aside:hover{
-    transform: rotate(-3deg);
+    transform: translateY(-.5em);
+    box-shadow: 0 1em 1em #3d3c3c;
     transition: all .3s;
 }
 
 #about .even{
-    background: linear-gradient(to top right, var(--ultraPrimeColor), var(--primeColor)); 
-}
-
-#about .even:hover{
-    transform: rotate(3deg);
-    transition: all .3s;
+    background: linear-gradient(to top right, #d961fd, var(--primeColor)); 
 }
 
 #about :nth-child(even) {
@@ -378,17 +385,20 @@ button:hover{
 
 #about dl{
     padding: 20px;
-    flex-grow: 1;
-    text-align: center;
+    font-weight: 700;
 }
 
 #about dt{
     font-size: 2.5em;
-    font-weight: bolder;
+    font-weight: 800;
 }
 
 #about dd{
     font-size: 1.4em;
+}
+
+#about dl:nth-child(2) span{
+    color: #fff;
 }
 
 #about .socialMedia{
@@ -402,13 +412,15 @@ button:hover{
     padding: .4em;
     margin: 0 1.5%;
     font-size: 1.3em;
+    transition: all .4s;
 }
 
 #about .socialMedia a:hover{
     cursor: pointer;
-    box-shadow: inset 0 0 12px #7c7c7c;
+    background: #353333;
+    color: var(--primeColor);
     transform: scale(1.15);
-    transition: all .2s;
+    transition: all .4s;
 } 
 
 /* process */
@@ -577,7 +589,7 @@ button:hover{
 
 #review div:hover{
     height: auto;
-    transform: scale(1.1) translateY(-5%);
+    /* transform: scale(1.1) translateY(-5%); */
     z-index: 3;
     transition: all .3s linear;
 }

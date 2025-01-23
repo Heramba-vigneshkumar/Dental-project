@@ -29,64 +29,75 @@ let hideStatus = document.querySelector('#viewStatus h2 i')
         viewStatus.classList.remove('viewStatusActive')
     })
 
-    let div = document.createElement('div')
-    let userName = document.getElementById('userName')
-    let userEmail = document.getElementById('userEmail')
-    let userNumber = document.getElementById('userName')
-    let apptDate = document.getElementById('apptDate')
-    let apptTime = document.getElementById('apptTime')
-
-    // if(userName&userEmail&userNumber&apptDate&apptDate)
 function addAppt() {
-    div.setAttribute('class','appointmentStatus')
-    div.innerHTML = ` <img src="./images/doctor-1.png" alt="">
 
-                <figcaption>
-                    <h4>${userName.value}</h4>
-                    <p>
-                        <span>
-                            <i class="fa-brands fa-mailchimp"></i>
-                            ${userEmail.value}
-                        </span>
-                        <span>
-                            <i class="fa-solid fa-square-phone"></i>
-                            ${userNumber.value}
-                        </span>
-                    </p>
-                    <p>
-                        <span>
-                            <i class="fa-regular fa-calendar-days"></i>
-                            ${apptDate.value}
-                        </span>
-                        <span>
-                            <i class="fa-regular fa-clock"></i>
-                            ${apptTime.value}
-                        </span>
-                    </p>
-                </figcaption>
+    let userName = document.getElementById('userName').value
+    let userEmail = document.getElementById('userEmail').value
+    let userNumber = document.getElementById('userNumber').value
+    let apptDate = document.getElementById('apptDate').value
+    let apptTime = document.getElementById('apptTime') .value
 
-                <span class="cancel" onclick="cancelAppt(event)">
-                    Cancel
-                </span>`
+    // if(viewStatus.length == 1){
+    //     let div = document.createElement('div')
+
+    //     div.innerHTML = `<h4>No appointments here...</h4>`
+    //     viewStatus.appendChild('div')
+    // }
+
+    if(userName && userEmail && userNumber && apptDate && apptTime){
+        let div = document.createElement('div')
+        
+        div.setAttribute('class','appointmentStatus')
+        div.innerHTML = ` <img src="./images/doctor-1.png" alt="">
+                    <figcaption>
+                        <h4>${userName}</h4>
+                        <p>
+                            <span>
+                                <i class="fa-brands fa-mailchimp"></i>
+                                ${userEmail}
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-square-phone"></i>
+                                ${userNumber}
+                            </span>
+                        </p>
+                        <p>
+                            <span>
+                                <i class="fa-regular fa-calendar-days"></i>
+                                ${apptDate}
+                            </span>
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                ${apptTime}
+                            </span>
+                        </p>
+                    </figcaption>
     
-    viewStatus.appendChild(div)
+                    <span class="cancel" onclick="cancelAppt(event)">
+                        Cancel
+                    </span>`
+        
+        viewStatus.appendChild(div)
+    
+        alert('Your appointment had been successfully booked !!!')
 
-    userName.value = ''
-    userEmail.value = ''
-    userNumber.value = ''
-    apptDate.value = ''
-    apptTime.value = ''
-
+        }
+       
+   
+    console.log(document.querySelector('input'))
 }
     
 function cancelAppt (event) {
     event.target.parentElement.remove()
 }
 
-let review = document.getElementById('review')
-let userText = document.getElementById('userText')
 
 function postComment() {
+    let div = document.createElement('div')
+    let review = document.getElementById('review')
+    let userText = document.getElementById('userText').value
+    let userName = document.getElementById('userName').value
+    
     div.setAttribute('id','reviewPanel')
     div.innerHTML = `<figure>
                     <img class="userProfile" src="https://images.pexels.com/photos/14950779/pexels-photo-14950779.jpeg?auto=compress&cs=tinysrgb&w=100" alt="">
@@ -94,7 +105,7 @@ function postComment() {
 
                 <aside>
                     <h3>
-                        ${userName.value}
+                        ${userName}
                     </h3>
                     <span>
                         <i class="fa-solid fa-star"></i>
@@ -107,15 +118,14 @@ function postComment() {
                 
                 <i class="fa-solid fa-xmark" onclick="delCom(event)"></i>
 
-                <article> 
+                <article>
                     <p>
-                        ${userText.value}
+                        ${userText}
                     </p>
                 </article>`
-
-    review.appendChild('div')
+                review.appendChild(div)
+                userText = ''
 }
-console.log(document.getElementsByClassName('userProfile').getAttribute('src'))
 
 function delCom (event) {
     event.target.parentElement.remove()
