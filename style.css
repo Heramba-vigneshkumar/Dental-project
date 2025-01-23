@@ -88,8 +88,8 @@ body::-webkit-scrollbar{
 #viewStatus .appointmentStatus{
     display: grid;
     place-items: center;
-    grid-template-columns: .7fr 3fr .7fr;
-    gap: 2%;
+    grid-template-columns: .5fr 2fr .4fr;
+    gap: 1.5%;
     border: 1px solid #858585;
     border-radius: 5px;
     padding: 1em .5em;
@@ -859,6 +859,15 @@ footer i:hover{
 }
 
 @media (max-width:990px) {
+    #viewStatus .appointmentStatus{
+        width: auto;
+        gap: 2.5%;
+    }
+
+    #viewStatus p span{
+        width: 100%;
+    }
+
     #review textarea{
         width: 24em;
     }
@@ -973,6 +982,10 @@ footer i:hover{
 }
 
 @media (max-width:605px){
+    #viewStatus h2{
+        margin-bottom: 20px;
+    }
+
     #viewStatus h2 span{
         right: 45%;
         top: 2.5em;
