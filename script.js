@@ -1,4 +1,3 @@
-
 let showList = document.querySelector('.showList i')
 let navOpen = document.querySelector('.navList')
 
@@ -29,66 +28,86 @@ let hideStatus = document.querySelector('#viewStatus h2 i')
         viewStatus.classList.remove('viewStatusActive')
     })
 
-function addAppt() {
-
-    let userName = document.getElementById('userName').value
-    let userEmail = document.getElementById('userEmail').value
-    let userNumber = document.getElementById('userNumber').value
-    let apptDate = document.getElementById('apptDate').value
-    let apptTime = document.getElementById('apptTime') .value
-
-    // if(viewStatus.length == 1){
-    //     let div = document.createElement('div')
-
-    //     div.innerHTML = `<h4>No appointments here...</h4>`
-    //     viewStatus.appendChild('div')
-    // }
+function addAppt(event) {
+    event.preventDefault()
+    var userName = document.getElementById('userName').value
+    var userEmail = document.getElementById('userEmail').value
+    var userNumber = document.getElementById('userNumber').value
+    var apptDate = document.getElementById('apptDate').value
+    var apptTime = document.getElementById('apptTime') .value
 
     if(userName && userEmail && userNumber && apptDate && apptTime){
-        let div = document.createElement('div')
-        
-        div.setAttribute('class','appointmentStatus')
-        div.innerHTML = ` <img src="./images/doctor-1.png" alt="">
-                    <figcaption>
-                        <h4>${userName}</h4>
-                        <p>
-                            <span>
-                                <i class="fa-brands fa-mailchimp"></i>
-                                ${userEmail}
-                            </span>
-                            <span>
-                                <i class="fa-solid fa-square-phone"></i>
-                                ${userNumber}
-                            </span>
-                        </p>
-                        <p>
-                            <span>
-                                <i class="fa-regular fa-calendar-days"></i>
-                                ${apptDate}
-                            </span>
-                            <span>
-                                <i class="fa-regular fa-clock"></i>
-                                ${apptTime}
-                            </span>
-                        </p>
-                    </figcaption>
-    
-                    <span class="cancel" onclick="cancelAppt(event)">
-                        Cancel
-                    </span>`
-        
-        viewStatus.appendChild(div)
-    
-        alert('Your appointment had been successfully booked !!!')
 
+        fetch('http://localhost:3500/submit',
+            {
+                method:"POST",
+                body:JSON.stringify({
+                    userName,
+                    userEmail,
+                    userNumber,
+                    apptDate,
+                    apptTime
+                }),
+                headers:{
+                    "Content-Type": "application/json; charset=UTF-8"
+                }
+            }
+        ).then((response)=>{
+            response.json()
+            alert('Your appointment had been successfully booked !!!')
+            window.location.reload()
+        })
         }
-       
-   
-    console.log(document.querySelector('input'))
 }
+
+function viewAppt(){
+    fetch('http://localhost:3500/get')
+        .then(res => res.json())
+        .then(res => res.map(user => {
+
+            const {_id, userName, userEmail, userNumber, apptDate, apptTime} = user
+            const div = document.createElement('div')
+
+            div.setAttribute('class','appointmentStatus')
+            div.innerHTML = ` <img src="./images/doctor-1.png" alt="">
+                        <figcaption>
+                            <h4>${userName}</h4>
+                            <p>
+                                <span>
+                                    <i class="fa-brands fa-mailchimp"></i> ${userEmail}
+                                </span>
+                                <span>
+                                    <i class="fa-solid fa-square-phone"></i> ${userNumber}
+                                </span>
+                            </p>
+                            <p>
+                                <span>
+                                    <i class="fa-regular fa-calendar-days"></i> ${apptDate}
+                                </span>
+                                <span>
+                                    <i class="fa-regular fa-clock"></i> ${apptTime}
+                                </span>
+                            </p>
+                        </figcaption>
+        
+                        <span class="cancel" onclick="cancelAppt('${_id}')">
+                            Cancel
+                        </span>`
+
+            viewStatus.appendChild(div)
+
+        }))
+}
+viewAppt()
     
-function cancelAppt (event) {
-    event.target.parentElement.remove()
+function cancelAppt (id) {
+    fetch(`http://localhost:3500/delete/${id}`)
+    .then(res => {
+        if(res.ok){
+        alert('Your appointment deleted sucessfully')
+        window.location.reload()
+        }
+    })
 }
 
 
