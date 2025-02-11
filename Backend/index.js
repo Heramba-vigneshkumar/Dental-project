@@ -13,12 +13,14 @@ const userSchema = new mongoose.Schema(
     }
 )
 
-const UserModel = mongoose.model("userProfiles", userSchema)
+const UserModel = mongoose.model("users", userSchema)
 
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect("mongodb://localhost:27017/vk_dental")
+const URL = 'mongodb+srv://vicky:devil@cluster0.rw560.mongodb.net/vk_dental?retryWrites=true&w=majority&appName=Cluster0'
+
+mongoose.connect(URL)
     .then(()=>console.log("DB Successfully Connected !!"))
 
 app.post('/submit',(req,res)=>{

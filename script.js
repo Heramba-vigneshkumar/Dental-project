@@ -1,3 +1,5 @@
+const URL = 'http://localhost:3500'
+
 let showList = document.querySelector('.showList i')
 let navOpen = document.querySelector('.navList')
 
@@ -38,7 +40,7 @@ function addAppt(event) {
 
     if(userName && userEmail && userNumber && apptDate && apptTime){
 
-        fetch('http://localhost:3500/submit',
+        fetch(URL+'/submit',
             {
                 method:"POST",
                 body:JSON.stringify({
@@ -61,7 +63,7 @@ function addAppt(event) {
 }
 
 function viewAppt(){
-    fetch('http://localhost:3500/get')
+    fetch(URL+'/get')
         .then(res => res.json())
         .then(res => res.map(user => {
 
@@ -101,7 +103,7 @@ function viewAppt(){
 viewAppt()
     
 function cancelAppt (id) {
-    fetch(`http://localhost:3500/delete/${id}`)
+    fetch(URL+`/delete/${id}`)
     .then(res => {
         if(res.ok){
         alert('Your appointment deleted sucessfully')
