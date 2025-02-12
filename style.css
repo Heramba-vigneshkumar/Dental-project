@@ -18,7 +18,7 @@ body::-webkit-scrollbar{
 }
 
 :root{
-    --primeColor: #04f5ad;
+    --primeColor: rgb(4, 245, 173);
     --semiPrimeColor: #cdf8da;
     --ultraPrimeColor: #d7f8e2;
 }
@@ -227,10 +227,9 @@ body::-webkit-scrollbar{
 
 .navbar .status{
     flex-basis: 10%;
-    font-size: 1.5em;
+    font-size: 1.8em;
+    padding: .3em;
     color: #6e6e6e;
-    padding: .4em;
-    border-radius: 10px;
 }
 
 /* home */
@@ -533,9 +532,12 @@ button:hover{
 }
 
 #review .reviewInput i{
-    font-size: 2.2em;
+    font-size: 2.3em;
     color: var(--primeColor);
-    padding-left: .7em;
+    margin-left: .7em;
+    padding: .2em .25em;
+    background: #5a5858;
+    border-radius: 50%;
 }
 
 #review div{
@@ -651,10 +653,19 @@ input[type='number']::-webkit-inner-spin-button{
 
 input[type='date']{
     width: 47.5% !important;
+    background: url(./images/calendar.png) no-repeat 96% center !important;
+    background-size: 1.6em 1.6em !important;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator,
+input[type='time']::-webkit-calendar-picker-indicator{
+    opacity: 0;
 }
 
 input[type='time']{
     width: 30% !important;
+    background: url(./images/clock.png) no-repeat 93% !important;
+    background-size: 1.6em 1.6em !important;
 }
 
 #appointment aside{
